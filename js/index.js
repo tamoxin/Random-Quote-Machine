@@ -1,8 +1,10 @@
 var user = "tamoxin@codepen:~$ ";
 
-var shareLink = "https://twitter.com/intent/tweet?text=";
+var shareLink = "";
 
 var command = "";
+
+var tweet = "https://twitter.com/intent/tweet?text=";
 
 var quote;
 
@@ -14,14 +16,18 @@ var insertText = function(){
     author = a[0].title;
     $("#quote").html(quote);
     $("#author").html(author);
+    tweet += $("#quote").text()+ "\n" + $("#author").text();
+    shareLink = encodeURI(tweet);
   });
 }
 
 var insertAbout = function(){
-  quote = "<p>This random quote machine was made by <a href='https://twitter.com/tamoxin' target='_blank' class='links'>Marco Carrizales</a>.<br>Thanks to <a href='http://www.mattboldt.com/' target='_blank' class='links'>Matt Boldt</a> for the Typed plugin.<br>The quotes showed on this site are from <a href='https://quotesondesign.com/' target='_blank' class='links'>https://quotesondesign.com/</a></p>";
+  quote = "<p style='text-align: left'>This random quote machine was made by <a href='https://twitter.com/tamoxin' target='_blank' class='links'>Marco Carrizales</a>.<br>Thanks to <a href='http://www.mattboldt.com/' target='_blank' class='links'>Matt Boldt</a> for the Typed plugin.<br>The quotes showed on this site are from <a href='https://quotesondesign.com/' target='_blank' class='links'>https://quotesondesign.com/</a></p>";
   author = "Thanks for passing by :)"
   $("#quote").html(quote);
   $("#author").html(author);
+  tweet += $("#quote").text()+ "\n" + $("#author").text();
+  shareLink = encodeURI(tweet);
 }
 
 var newQuote = function(){
@@ -47,6 +53,8 @@ var about = function(){
 var clr = function(){
   quote = "";
   author = "";
+  tweet = "https://twitter.com/intent/tweet?text=";
+  shareLink = "";
   $("#quote").text(quote);
   $("#author").text(author);
 }
@@ -59,10 +67,8 @@ $(document).ready(function(){
   //about
   $("#about").on("click", about);
   
-  //share
-  $("share-quote").on("click", function(){
-    //var qte = "hola a todos";
-    //var autr = $("#author").text();
-    $("#author").html(quote);
+  //share quote
+  $("#share-quote").on("click", function(){
+    $("#share-quote").attr("href", shareLink);
   });
 });

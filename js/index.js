@@ -22,7 +22,7 @@ var insertText = function(){
 }
 
 var insertAbout = function(){
-  quote = "<p style='text-align: left'>This random quote machine was made by <a href='https://twitter.com/tamoxin' target='_blank' class='links'>Marco Carrizales</a>.<br>Thanks to <a href='http://www.mattboldt.com/' target='_blank' class='links'>Matt Boldt</a> for the Typed plugin.<br>The quotes showed on this site are from <a href='https://quotesondesign.com/' target='_blank' class='links'>https://quotesondesign.com/</a></p>";
+  quote = "<p style='text-align: left'>This random quote machine was made by <a href='https://twitter.com/tamoxin' target='_blank' class='links'>Marco Carrizales</a>.<br>Thanks to <a href='https://twitter.com/atmattb' target='_blank' class='links'>Matt Boldt</a> for the <a href='http://www.mattboldt.com/demos/typed-js/' target='_blank' class='links'>Typed plugin</a>.<br>The quotes showed on this site are from <a href='https://quotesondesign.com/' target='_blank' class='links'>https://quotesondesign.com/</a></p>";
   author = "Thanks for passing by :)"
   $("#quote").html(quote);
   $("#author").html(author);

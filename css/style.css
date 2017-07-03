@@ -23,7 +23,7 @@ h1 {
 }
 
 #page {
-  background-image: url("https://dl.dropboxusercontent.com/u/49375955/Images/backgrounds-codepen/wallpaper-1406531.jpg");
+  background-image: url(../img/bg.jpg);
   background-size: cover;
   //background-position: center center;
 }
